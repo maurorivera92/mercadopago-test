@@ -1,6 +1,6 @@
 // server.js
 require("dotenv").config();
-const { createServer } = require('https')
+const { createServer } = require('http')
 const { parse } = require('url')
 const next = require('next');
 const dev = process.env.NODE_ENV !== 'production'
@@ -27,6 +27,6 @@ app.prepare().then(() => {
     process.exit(1);
   }).listen(port, (err) => {
     if (err) throw err
-    console.log(`> Ready LR on https://${hostname}:${port}`)
+    console.log(`> Ready LR on http://${hostname}:${port}`)
   })
 })
